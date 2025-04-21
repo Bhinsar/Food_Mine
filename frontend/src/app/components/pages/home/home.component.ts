@@ -1,19 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Food } from '../../../model/Food.type';
 import { FoodService } from '../../../services/food.service';
+import { RouterLink } from '@angular/router';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink, NgClass],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnInit{
-  foods: Food[] = [];
-  constructor(private foodService:FoodService){
-    this.foods = foodService.getAll();
+export class HomeComponent implements OnInit {
+  foods = signal<Food[]>([]);
+
+  constructor(private foodService: FoodService) {
+    this.foods.set(foodService.getAll());
   }
-  ngOnInit(): void {
-      
-  }
+
+  ngOnInit(): void {}
 }
