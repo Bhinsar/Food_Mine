@@ -1,1 +1,32 @@
-<p>header works!</p>
+<header class="realative bg-white shadow-md p-4 mb-4">
+  <div class="container center justify-between">
+    <a [routerLink]="'/'" class="center gap-2">
+      <img src="/assets/images/logo.png" class="w-10" alt="Logo" />
+      <h1 class="text-lg text-bold text-red-600">Food Mine</h1>
+    </a>
+    <nav>
+      <ul class="center gap-4">
+        <li>
+          <a [routerLink]="'/login'" class="text-red-600 curser-pointer hover:text-red-400">Login</a>
+        </li>
+        <li class="relative group">
+          <a [routerLink]="'/dashboard'" class="text-red-600 cursor-pointer hover:text-red-400">
+            John
+          </a>
+          
+          <div class="absolute hidden group-hover:flex flex-col bg-white border p-2 rounded shadow-md z-10 w-[100%] min-w-[8rem]">
+            <a [routerLink]="'/profile'" class="text-red-600 cursor-pointer hover:text-red-400">Profile</a>
+            <a [routerLink]="'/order'" class="text-red-600 cursor-pointer hover:text-red-400">Order</a>
+            <a [routerLink]="'/logout'" class="text-red-600 cursor-pointer hover:text-red-400">Logout</a>
+          </div>
+        </li>
+        
+        <li>
+          <a [routerLink]="'/cart'" class="text-red-600 curser-pointer hover:text-red-400">
+            Cart<span>3</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
