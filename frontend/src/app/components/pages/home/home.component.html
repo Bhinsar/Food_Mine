@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 container">
+    @for (food of foods(); track food.id) {
+      <div class="p-3 bg-gray-300/80 shadow-2xl rounded-xl">
+        <a [routerLink]="['/food', food.id]">
+          <img [src]="food.imageUrl" [alt]="food.name"
+               class="w-[10rem] h-[10rem] md:w-[15rem] rounded-3xl" />
+          <div class="mt-2 flex justify-between items-center">
+            <span>{{ food.name }}</span>
+            <span class="material-icons"
+                  [ngClass]="food.favorite ? 'text-red-500' : 'text-gray-400'">
+              favorite
+            </span>
+          </div>
+        </a>
+      </div>
+    }
+  </div>
+  
