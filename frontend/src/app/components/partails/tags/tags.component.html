@@ -1,0 +1,32 @@
+<div class="container flex items-center gap-2">
+    <!-- Left Scroll Button -->
+    <span
+      class="material-icons cursor-pointer"
+      (click)="scrollLeft()"
+      >chevron_left</span
+    >
+  
+    <!-- Scrollable Tags Container -->
+    <div
+      #scrollTags
+      class="flex overflow-x-auto no-scrollbar gap-2 flex-nowrap"
+    >
+      <ng-container *ngFor="let tag of tags()">
+        <a
+          [routerLink]="['/tags', tag.name]"
+          routerLinkActive="bg-red-500 text-white"
+          class="bg-gray-300/80 text-gray-700 whitespace-nowrap rounded-full px-3 py-1 text-sm font-semibold hover:bg-red-400 hover:text-white"
+        >
+          {{ tag.name }} ({{ tag.count }})
+        </a>
+      </ng-container>
+    </div>
+  
+    <!-- Right Scroll Button -->
+    <span
+      class="material-icons cursor-pointer"
+      (click)="scrollRight()"
+      >chevron_right</span
+    >
+  </div>
+  
