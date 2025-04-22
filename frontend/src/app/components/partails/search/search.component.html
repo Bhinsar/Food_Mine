@@ -1,0 +1,19 @@
+<div class="container items-center flex justify-end mb-5">
+    <div class="flex">
+      <input
+        #s
+        type="text"
+        placeholder="Search..."
+        class="p-2 border border-gray-300 rounded-l-md rounded-r-none focus:outline-none"
+        (keyup.enter)="search(s.value)"
+        [value]="searchTerm"
+      />
+      <button
+        (click)="search(s.value)"
+        class="p-2 bg-red-500 text-white rounded-r-md rounded-l-none"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+  
