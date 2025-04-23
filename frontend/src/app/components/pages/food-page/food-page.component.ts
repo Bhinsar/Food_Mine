@@ -2,10 +2,12 @@ import { Component, signal } from '@angular/core';
 import { Food } from '../../../model/Food.type';
 import { FoodService } from '../../../services/food.service';
 import { ActivatedRoute } from '@angular/router';
+import { NgFor } from '@angular/common';
+import { TagsComponent } from '../../partails/tags/tags.component';
 
 @Component({
   selector: 'app-food-page',
-  imports: [],
+  imports: [NgFor],
   templateUrl: './food-page.component.html',
   styleUrl: './food-page.component.css'
 })
